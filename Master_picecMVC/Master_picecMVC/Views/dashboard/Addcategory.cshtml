@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Addcategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+
+
+}
+<body style="background-color:black">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card"  style="height:350px ; margin:250px">
+            <div class="card-body">
+                <h3 class="card-title" style="text-align:center">Add category</h3>
+              
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label for="exampleInputUsername1">category name</label>
+                        <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">upload img</label>
+                      
+                        <button type="button" class="btn btn-danger btn-icon-text">
+                            <i class="mdi mdi-upload btn-icon-prepend"></i> Upload
+                        </button>
+                       
+                    </div>
+                   
+                    <div style="text-align:center">
+                        <button type="button" class="btn btn-success btn-icon-text">
+                            <i class="mdi mdi-alert btn-icon-prepend"></i> Add
+                        </button>
+                        <a href="https://localhost:44333/dashboard/showcategory" type="button" class="btn btn-dark btn-icon-text">
+                            Cancle <i class="mdi mdi-file-check btn-icon-append"></i>
+                        </a>
+                    </div>
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+   </body>
+
