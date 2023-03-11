@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="master_picesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categorys">
+    <Key>
+      <PropertyRef Name="id_category" />
+    </Key>
+    <Property Name="id_category" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_category" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+    <Property Name="img" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Catrs">
+    <Key>
+      <PropertyRef Name="id_cart" />
+    </Key>
+    <Property Name="id_cart" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_proudect" Type="int" />
+    <Property Name="id_user" Type="int" />
+    <Property Name="quantity" Type="int" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Comment_id" />
+    </Key>
+    <Property Name="Comment_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comment_text" Type="text" />
+    <Property Name="userid" Type="int" />
+    <Property Name="Proudect_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Order_Details">
+    <Key>
+      <PropertyRef Name="OrderDetails" />
+    </Key>
+    <Property Name="OrderDetails" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Order_id" Type="nvarchar" MaxLength="128" />
+    <Property Name="Proudect_id" Type="int" />
+    <Property Name="Quantity" Type="int" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Order_id" />
+    </Key>
+    <Property Name="Order_id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="proudect">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_sub" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="Quentity" Type="int" />
+    <Property Name="imgone" Type="varchar" MaxLength="500" />
+    <Property Name="imgtwo" Type="varchar" MaxLength="500" />
+    <Property Name="imgthree" Type="varchar" MaxLength="500" />
+    <Property Name="imgfour" Type="varchar" MaxLength="500" />
+    <Property Name="video" Type="varchar(max)" />
+    <Property Name="Price" Type="float" />
+  </EntityType>
+  <EntityType Name="Roll_User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rolluser" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="subcats">
+    <Key>
+      <PropertyRef Name="id_sub" />
+    </Key>
+    <Property Name="id_sub" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cat" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+    <Property Name="img" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="id_Name" />
+    </Key>
+    <Property Name="id_Name" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="addrees" Type="varchar" MaxLength="200" />
+    <Property Name="phone" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="rolluser" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Catrs_proudect">
+    <End Role="proudect" Type="Self.proudect" Multiplicity="0..1" />
+    <End Role="Catrs" Type="Self.Catrs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proudect">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Catrs">
+        <PropertyRef Name="id_proudect" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Catrs_USERS">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="0..1" />
+    <End Role="Catrs" Type="Self.Catrs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="id_Name" />
+      </Principal>
+      <Dependent Role="Catrs">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_proudect">
+    <End Role="proudect" Type="Self.proudect" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proudect">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="Proudect_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_USERS">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="id_Name" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Details_Orders">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+    <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Order_id" />
+      </Principal>
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="Order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Details_proudect">
+    <End Role="proudect" Type="Self.proudect" Multiplicity="0..1" />
+    <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proudect">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="Proudect_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_USERS">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="id_Name" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_proudect_subcats">
+    <End Role="subcats" Type="Self.subcats" Multiplicity="1" />
+    <End Role="proudect" Type="Self.proudect" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subcats">
+        <PropertyRef Name="id_sub" />
+      </Principal>
+      <Dependent Role="proudect">
+        <PropertyRef Name="id_sub" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_subcats_Categorys">
+    <End Role="Categorys" Type="Self.Categorys" Multiplicity="1" />
+    <End Role="subcats" Type="Self.subcats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorys">
+        <PropertyRef Name="id_category" />
+      </Principal>
+      <Dependent Role="subcats">
+        <PropertyRef Name="id_cat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="master_picesModelStoreContainer">
+    <EntitySet Name="Categorys" EntityType="Self.Categorys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Catrs" EntityType="Self.Catrs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order_Details" EntityType="Self.Order_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="proudect" EntityType="Self.proudect" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roll_User" EntityType="Self.Roll_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subcats" EntityType="Self.subcats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Catrs_proudect" Association="Self.FK_Catrs_proudect">
+      <End Role="proudect" EntitySet="proudect" />
+      <End Role="Catrs" EntitySet="Catrs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Catrs_USERS" Association="Self.FK_Catrs_USERS">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="Catrs" EntitySet="Catrs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_proudect" Association="Self.FK_Comments_proudect">
+      <End Role="proudect" EntitySet="proudect" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_USERS" Association="Self.FK_Comments_USERS">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Details_Orders" Association="Self.FK_Order_Details_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Details_proudect" Association="Self.FK_Order_Details_proudect">
+      <End Role="proudect" EntitySet="proudect" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_USERS" Association="Self.FK_Orders_USERS">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_proudect_subcats" Association="Self.FK_proudect_subcats">
+      <End Role="subcats" EntitySet="subcats" />
+      <End Role="proudect" EntitySet="proudect" />
+    </AssociationSet>
+    <AssociationSet Name="FK_subcats_Categorys" Association="Self.FK_subcats_Categorys">
+      <End Role="Categorys" EntitySet="Categorys" />
+      <End Role="subcats" EntitySet="subcats" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

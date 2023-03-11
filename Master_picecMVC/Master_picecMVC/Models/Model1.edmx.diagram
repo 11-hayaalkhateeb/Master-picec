@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1f827940af074aefa5b75f696d1674d8" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="master_picesModel.Category" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="master_picesModel.Catr" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="master_picesModel.Comment" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="master_picesModel.Order_Details" Width="1.5" PointX="7.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="master_picesModel.Order" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="master_picesModel.proudect" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="master_picesModel.Roll_User" Width="1.5" PointX="2.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="master_picesModel.subcat" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="master_picesModel.sysdiagram" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="master_picesModel.USER" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="master_picesModel.FK_subcats_Categorys" ManuallyRouted="false" />
+        <AssociationConnector Association="master_picesModel.FK_Catrs_proudect" ManuallyRouted="false" />
+        <AssociationConnector Association="master_picesModel.FK_Catrs_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="master_picesModel.FK_Comments_proudect" ManuallyRouted="false" />
+        <AssociationConnector Association="master_picesModel.FK_Comments_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="master_picesModel.FK_Order_Details_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="master_picesModel.FK_Order_Details_proudect" ManuallyRouted="false" />
+        <AssociationConnector Association="master_picesModel.FK_Orders_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="master_picesModel.FK_proudect_subcats" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

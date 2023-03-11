@@ -1,0 +1,104 @@
+﻿@model Master_picecMVC.Models.proudect
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>proudect</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quentity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quentity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imgone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imgone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imgtwo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imgtwo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imgthree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imgthree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imgfour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imgfour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.video)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.video)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.subcat.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subcat.name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

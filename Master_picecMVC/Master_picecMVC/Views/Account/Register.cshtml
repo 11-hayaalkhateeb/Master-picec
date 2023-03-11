@@ -1,9 +1,12 @@
 ﻿@model Master_picecMVC.Models.RegisterViewModel
 @{
     ViewBag.Title = "Register";
-    Layout = "~/Views/Shared/_layout1.cshtml";
+    Layout = null;
 
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<script src="https://kit.fontawesome.com/a8b56cb52b.js" crossorigin="anonymous"></script>
 <style>
     @*@font-face {
     font-family: "Poppins-Regular";
@@ -294,42 +297,98 @@ button {
     }
 }*@
 
+
+
+
 </style>
 
-            
-<h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+<div class="wrapper" style="background-image: url('/img/pic12.jpg')">
+
+    <div class="inner">
+        <div class="image-holder">
+            <img src="~/img/piclog.jpg" alt="" />
+        </div>
+
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <h3>Sign up</h3>
+            @*@Html.ValidationSummary("", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-default" value="Register" />
+                    </div>
+                </div>*@
+
+
+            <div class="form-wrapper" data-validate="User Name is required">
+                <input type="text" placeholder="Username" class="form-control">
+                <i class="zmdi zmdi-account"></i>
+            </div>
+            <div class="form-wrapper" data-validate="Valid email is required: ex@abc.xyz">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control email-input ", id = "email-input", placeholder = "Email" })
+                <i class="zmdi zmdi-email"></i>
+            </div>
+            <div class="form-wrapper">
+                <input type="text" placeholder="mobile phone" class="form-control">
+                <i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+            </div>
+            <div class="form-wrapper" data-validate="Password is required">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control email-input", placeholder = "Password" })
+
+                <i class="zmdi zmdi-lock"></i>
+            </div>
+            <div class="form-wrapper">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control email-input", placeholder = "Confirm Password" })
+
+                @*<input type="password" placeholder="Confirm Password" class="form-control">*@
+                <i class="zmdi zmdi-lock"></i>
+            </div>
+            <div class="flex-sb-m w-full p-t-3 p-b-32">
+
+
+                <div>
+                    @Html.ActionLink("you already have account?", "Login", new { }, new { style = "" })
+                </div>
+            </div>
+            <div class="container-login100-form-btn">
+
+                <input type="submit" value="Register" style="background-color: #3D464D " />
+            </div>
+
+            <div class="login100-form-social flex-c-m">
+                <a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+                    <i class="fa fa-facebook-f" aria-hidden="true"></i>
+                </a>
+
+                <a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

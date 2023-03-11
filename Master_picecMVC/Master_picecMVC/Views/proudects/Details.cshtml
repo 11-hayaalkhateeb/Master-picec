@@ -1,0 +1,98 @@
+﻿@model Master_picecMVC.Models.proudect
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>proudect</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quentity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quentity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imgone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imgone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imgtwo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imgtwo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imgthree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imgthree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imgfour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imgfour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.video)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.video)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.subcat.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subcat.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

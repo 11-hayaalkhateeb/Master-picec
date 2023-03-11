@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Master_picecMVC.Models.subcat>
+
+
+
+
+    @foreach (var item in Model)
+    {
+
+        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="checkbox" class="custom-control-input" id="price-1">
+            <a class="custom-control-label" for="price-1"  href="https://localhost:44333/Categories/proudects/?id=@item.id_sub">@item.name</a>
+            <span class="badge border font-weight-normal">150</span>
+        </div>
+    }
+

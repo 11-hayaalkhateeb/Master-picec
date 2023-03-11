@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="master_picesModelStoreContainer" CdmEntityContainer="master_picesEntities">
+    <EntitySetMapping Name="Categorys">
+      <EntityTypeMapping TypeName="master_picesModel.Category">
+        <MappingFragment StoreEntitySet="Categorys">
+          <ScalarProperty Name="id_category" ColumnName="id_category" />
+          <ScalarProperty Name="Name_category" ColumnName="Name_category" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="img" ColumnName="img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Catrs">
+      <EntityTypeMapping TypeName="master_picesModel.Catr">
+        <MappingFragment StoreEntitySet="Catrs">
+          <ScalarProperty Name="id_cart" ColumnName="id_cart" />
+          <ScalarProperty Name="id_proudect" ColumnName="id_proudect" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="master_picesModel.Comment">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="Comment_id" ColumnName="Comment_id" />
+          <ScalarProperty Name="Comment_text" ColumnName="Comment_text" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Proudect_id" ColumnName="Proudect_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_Details">
+      <EntityTypeMapping TypeName="master_picesModel.Order_Details">
+        <MappingFragment StoreEntitySet="Order_Details">
+          <ScalarProperty Name="OrderDetails" ColumnName="OrderDetails" />
+          <ScalarProperty Name="Order_id" ColumnName="Order_id" />
+          <ScalarProperty Name="Proudect_id" ColumnName="Proudect_id" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="master_picesModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Order_id" ColumnName="Order_id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proudects">
+      <EntityTypeMapping TypeName="master_picesModel.proudect">
+        <MappingFragment StoreEntitySet="proudect">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_sub" ColumnName="id_sub" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Quentity" ColumnName="Quentity" />
+          <ScalarProperty Name="imgone" ColumnName="imgone" />
+          <ScalarProperty Name="imgtwo" ColumnName="imgtwo" />
+          <ScalarProperty Name="imgthree" ColumnName="imgthree" />
+          <ScalarProperty Name="imgfour" ColumnName="imgfour" />
+          <ScalarProperty Name="video" ColumnName="video" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roll_User">
+      <EntityTypeMapping TypeName="master_picesModel.Roll_User">
+        <MappingFragment StoreEntitySet="Roll_User">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rolluser" ColumnName="rolluser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subcats">
+      <EntityTypeMapping TypeName="master_picesModel.subcat">
+        <MappingFragment StoreEntitySet="subcats">
+          <ScalarProperty Name="id_sub" ColumnName="id_sub" />
+          <ScalarProperty Name="id_cat" ColumnName="id_cat" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="img" ColumnName="img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="master_picesModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="master_picesModel.USER">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="id_Name" ColumnName="id_Name" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="addrees" ColumnName="addrees" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="rolluser" ColumnName="rolluser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

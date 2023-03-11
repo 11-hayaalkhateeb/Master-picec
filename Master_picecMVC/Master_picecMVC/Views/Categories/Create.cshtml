@@ -1,0 +1,88 @@
+﻿@model Master_picecMVC.Models.Category
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@*<body style="background-color:black">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card" style="height:350px ; margin:250px">
+            <div class="card-body">
+                <h3 class="card-title" style="text-align:center">Add category</h3>
+
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label for="exampleInputUsername1">category name</label>
+                        <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">upload img</label>
+
+                        <button type="button" class="btn btn-danger btn-icon-text">
+                            <i class="mdi mdi-upload btn-icon-prepend"></i> Upload
+                        </button>
+
+                    </div>
+
+                    <div style="text-align:center">
+                        <button type="button" class="btn btn-success btn-icon-text">
+                            <i class="mdi mdi-alert btn-icon-prepend"></i> Add
+                        </button>
+                        <a href="https://localhost:44333/dashboard/showcategory" type="button" class="btn btn-dark btn-icon-text">
+                            Cancle <i class="mdi mdi-file-check btn-icon-append"></i>
+                        </a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>*@
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Category</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name_category, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name_category, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name_category, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.img, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.img, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.img, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
